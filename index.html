@@ -92,10 +92,10 @@
         <div class="social-content">
             <h2>FOLLOW THE ADVENTURE</h2>
             <div class="social-icons-large">
-                <a href="https://www.instagram.com/alpinemix.ca/" target="_blank" class="social-icon"><img src="icon-instagram.png" alt="Instagram"></a>
-                <a href="https://www.tiktok.com/@alpinemix" target="_blank" class="social-icon"><img src="icon-tiktok.png" alt="TikTok"></a>
-                <a href="https://www.facebook.com/profile.php?id=61584642136603" target="_blank" class="social-icon"><img src="icon-facebook.png" alt="Facebook"></a>
-                <a href="https://www.youtube.com/@AlpineMix" target="_blank" class="social-icon"><img src="icon-youtube.png" alt="YouTube"></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><img src="icon-instagram.png" alt="Instagram"></a>
+                <a href="https://tiktok.com" target="_blank" class="social-icon"><img src="icon-tiktok.png" alt="TikTok"></a>
+                <a href="https://facebook.com" target="_blank" class="social-icon"><img src="icon-facebook.png" alt="Facebook"></a>
+                <a href="https://youtube.com" target="_blank" class="social-icon"><img src="icon-youtube.png" alt="YouTube"></a>
             </div>
             <div class="social-visual">
                 <img src="product-splash.png" alt="Splash" class="splash-img">
@@ -121,7 +121,10 @@
 
     <footer><p>&copy; 2025 Lerner Distributions. All Rights Reserved.</p></footer>
 
-    <a href="#" class="sticky-cart-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count">1</span></a>
+    <a href="javascript:void(0)" class="sticky-cart-btn" onclick="openCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">1</span>
+    </a>
 
     <div class="elevation-container">
         <div class="elevation-label">ALTITUDE</div>
@@ -140,7 +143,6 @@
 
     <div id="delivery-modal" class="modal-overlay">
         <span class="close-modal" onclick="closeMapModal()">&times;</span>
-        
         <div class="modal-content">
             <h2 class="modal-title">Free Delivery Zone</h2>
             <p class="modal-desc">We offer free personal delivery within 5km of Downtown Vancouver.</p>
@@ -148,13 +150,48 @@
         </div>
     </div>
 
+    <div id="cart-modal" class="modal-overlay">
+        <span class="close-modal" onclick="closeCart()">&times;</span>
+        <div class="modal-content cart-content">
+            <h2 class="modal-title">YOUR CART</h2>
+            
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="canorangecola.png" alt="Alpine Mix" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h4>Alpine Mix Original</h4>
+                        <p>6 Pack</p>
+                    </div>
+                    <div class="cart-item-price">$14.00</div>
+                </div>
+            </div>
+
+            <div class="cart-total">
+                <span>Total</span>
+                <span>$14.00</span>
+            </div>
+
+            <button class="btn-checkout">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        // --- CART LOGIC ---
+        function openCart() {
+            document.getElementById('cart-modal').style.display = 'flex';
+        }
+        function closeCart() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+
+        // --- PACK SELECTOR LOGIC ---
         function selectPack(btn) {
             document.querySelectorAll('.pack-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
 
+        // --- MAP LOGIC ---
         let map;
         function openMapModal() {
             document.getElementById('delivery-modal').style.display = 'flex';
@@ -168,11 +205,15 @@
             L.circle([49.2827, -123.1207], { color: '#2ecc71', radius: 5000 }).addTo(map);
         }
         
+        // Close modals if clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('delivery-modal');
-            if (event.target == modal) closeMapModal();
+            const mapModal = document.getElementById('delivery-modal');
+            const cartModal = document.getElementById('cart-modal');
+            if (event.target == mapModal) closeMapModal();
+            if (event.target == cartModal) closeCart();
         }
 
+        // --- ELEVATION LOGIC ---
         const maxAltitude = 3000;
         const trackHeight = 400; 
         const tension = 0.08, friction = 0.75;
@@ -212,4 +253,3 @@
     </script>
 </body>
 </html>
-

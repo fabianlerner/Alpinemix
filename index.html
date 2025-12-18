@@ -42,8 +42,14 @@
                 <div class="pack-selector">
                     <span class="selector-label">Choose Quantity:</span>
                     <div class="pack-options">
-                        <button class="pack-btn active"><span class="pack-size">6 PACK</span><span class="pack-price">$14.00</span></button>
-                        <button class="pack-btn"><span class="pack-size">12 PACK</span><span class="pack-price">$26.00</span></button>
+                        <button class="pack-btn active" onclick="selectPack(this)">
+                            <span class="pack-size">6 PACK</span>
+                            <span class="pack-price">$14.00</span>
+                        </button>
+                        <button class="pack-btn" onclick="selectPack(this)">
+                            <span class="pack-size">12 PACK</span>
+                            <span class="pack-price">$26.00</span>
+                        </button>
                     </div>
                 </div>
 
@@ -133,14 +139,22 @@
     </div>
 
     <div id="delivery-modal" class="modal-overlay">
+        <span class="close-modal" onclick="closeMapModal()">&times;</span>
+        
         <div class="modal-content">
-            <span class="close-modal" onclick="closeMapModal()">&times;</span>
+            <h2 class="modal-title">Free Delivery Zone</h2>
+            <p class="modal-desc">We offer free personal delivery within 5km of Downtown Vancouver.</p>
             <div id="leaflet-map-container"></div>
         </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        function selectPack(btn) {
+            document.querySelectorAll('.pack-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
         let map;
         function openMapModal() {
             document.getElementById('delivery-modal').style.display = 'flex';

@@ -153,6 +153,11 @@
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
             L.circle([49.2827, -123.1207], { color: '#2ecc71', radius: 5000 }).addTo(map);
         }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('delivery-modal');
+            if (event.target == modal) closeMapModal();
+        }
 
         const maxAltitude = 3000;
         const trackHeight = 400; 

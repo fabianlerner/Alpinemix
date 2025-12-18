@@ -123,7 +123,7 @@
 
     <a href="javascript:void(0)" class="sticky-cart-btn" onclick="openCart()">
         <i class="fa-solid fa-cart-shopping"></i>
-        <span class="cart-count">1</span>
+        <span class="cart-count" id="cart-count-badge" style="display: none;">0</span>
     </a>
 
     <div class="elevation-container">
@@ -152,37 +152,40 @@
 
     <div id="cart-modal" class="modal-overlay">
         <span class="close-modal" onclick="closeCart()">&times;</span>
-        <div class="modal-content cart-content">
+        <div class="modal-content cart-content"> 
             <h2 class="modal-title">YOUR CART</h2>
             
-            <div class="cart-items">
-                <div class="cart-item">
-                    <img src="canorangecola.png" alt="Alpine Mix" class="cart-item-img">
-                    <div class="cart-item-details">
-                        <h4>Alpine Mix Original</h4>
-                        <p>6 Pack</p>
-                    </div>
-                    <div class="cart-item-price">$14.00</div>
-                </div>
+            <div class="cart-items" id="cart-items-container">
+                <p style="text-align: center; color: #777; margin-top: 50px;">Your cart is currently empty.</p>
             </div>
 
-            <div class="cart-total">
+            <div class="cart-total" style="display: none;" id="cart-total-section">
                 <span>Total</span>
-                <span>$14.00</span>
+                <span>$0.00</span>
             </div>
 
-            <button class="btn-checkout">PROCEED TO CHECKOUT</button>
+            <button class="btn-checkout" style="opacity: 0.5; cursor: not-allowed;">PROCEED TO CHECKOUT</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // --- CART LOGIC ---
+        let cartCount = 0;
+
         function openCart() {
             document.getElementById('cart-modal').style.display = 'flex';
         }
         function closeCart() {
             document.getElementById('cart-modal').style.display = 'none';
+        }
+
+        // Optional: Function to simulate adding to cart (for future use)
+        function addToCart() {
+            cartCount++;
+            const badge = document.getElementById('cart-count-badge');
+            badge.style.display = 'flex'; // Show badge
+            badge.innerText = cartCount;
         }
 
         // --- PACK SELECTOR LOGIC ---
@@ -205,7 +208,6 @@
             L.circle([49.2827, -123.1207], { color: '#2ecc71', radius: 5000 }).addTo(map);
         }
         
-        // Close modals if clicking outside
         window.onclick = function(event) {
             const mapModal = document.getElementById('delivery-modal');
             const cartModal = document.getElementById('cart-modal');

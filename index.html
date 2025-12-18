@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpine Cola | The Peak of Refreshment</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -13,18 +13,10 @@
 
     <nav class="glass-nav">
         <div class="nav-links">
-            <a href="#" class="nav-link">
-                <img src="texthome (1).png" alt="Home">
-            </a>
-            <a href="#product-section" class="nav-link">
-                <img src="textproducts (1).png" alt="Products">
-            </a>
-            <a href="#about-section" class="nav-link">
-                <img src="textaboutus (1).png" alt="Our Story">
-            </a>
-            <a href="#contact-section" class="nav-link">
-                <img src="textcontact (1).png" alt="Contact">
-            </a>
+            <a href="#" class="nav-link"><img src="texthome (1).png" alt="Home"></a>
+            <a href="#product-section" class="nav-link"><img src="textproducts (1).png" alt="Products"></a>
+            <a href="#about-section" class="nav-link"><img src="textaboutus (1).png" alt="About Us"></a>
+            <a href="#contact-section" class="nav-link"><img src="textcontact (1).png" alt="Contact"></a>
         </div>
     </nav>
 
@@ -35,38 +27,39 @@
     </header>
 
     <section id="product-section" class="content-section">
-    <div class="shop-container">
-        <div class="shop-images">
-            <img src="beach-alpinemix.jpg" alt="Alpine Mix on the Beach" class="dual-shop-img">
-            <img src="product-clean.png" alt="Alpine Mix Can" class="dual-shop-img">
-        </div>
+        <div class="shop-container">
+            <div class="shop-images">
+                <img src="beach-alpinemix.jpg" alt="Product View 1" class="dual-shop-img">
+                <img src="canorangecola.png" alt="Product View 2" class="dual-shop-img">
+            </div>
 
-        <div class="shop-details">
-            <h3 class="product-title">Alpine Mix Original</h3>
-            <p class="product-desc">
-                Crisp mountain air meets the zest of orange and the classic bite of cola. 
-                Perfect for the trail or the fireside.
-            </p>
+            <div class="shop-details">
+                <h3 class="product-title">Alpine Mix Original</h3>
+                <p class="product-desc">
+                    Crisp mountain air meets the zest of orange and the classic bite of cola. 
+                    Perfect for the trail or the fireside.
+                </p>
 
-            <div class="pack-selector">
-                <span class="selector-label">Choose Quantity:</span>
-                <div class="pack-options">
-                    <button class="pack-btn active"><span class="pack-size">6 PACK</span><span class="pack-price">$14.00</span></button>
-                    <button class="pack-btn"><span class="pack-size">12 PACK</span><span class="pack-price">$26.00</span></button>
+                <div class="pack-selector">
+                    <span class="selector-label">Choose Quantity:</span>
+                    <div class="pack-options">
+                        <button class="pack-btn active"><span class="pack-size">6 PACK</span><span class="pack-price">$14.00</span></button>
+                        <button class="pack-btn"><span class="pack-size">12 PACK</span><span class="pack-price">$26.00</span></button>
+                    </div>
+                </div>
+
+                <button class="btn-coming-soon" disabled>COMING SOON!</button>
+                
+                <div class="shipping-area">
+                    <p class="shipping-note">🚚 Free shipping on orders over $50</p>
+                    <button class="map-trigger-btn" onclick="openMapModal()">
+                        <i class="fa-solid fa-map-location-dot"></i> View Delivery Zone
+                    </button>
                 </div>
             </div>
-
-            <button class="btn-coming-soon" disabled>COMING SOON!</button>
-            
-            <div class="shipping-area">
-                <p class="shipping-note">🚚 Free shipping on orders over $50</p>
-                <button class="map-trigger-btn" onclick="openMapModal()">
-                    <i class="fa-solid fa-map-location-dot"></i> View Delivery Zone
-                </button>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <section id="about-section" class="content-section alt-bg">
         <img src="sidebar-mountain.png" alt="Mountain Graphic" class="section-mountain-bg">
         <h2 class="section-heading">ABOUT US</h2>
@@ -74,14 +67,14 @@
             <div class="our-story">
                 <div class="story-text-wrapper">
                     <h3>OUR STORY</h3>
-                    <p>Alpine Mix was founded by brothers Fabian and Joel Lerner, their father Joerg, and their cousin Timo Lerner. Originally from Germany, we grew up with and fell in love with the classic taste of Spezi—a refreshing blend of cola and orange. We couldn't find anything that matched that nostalgic flavor here, so we made it our mission to bring that distinctive, thirst-quenching experience home to Vancouver.</p>
+                    <p>Alpine Mix was founded by brothers Fabian and Joel Lerner, their father Joerg, and their cousin Timo Lerner. Originally from Germany, we grew up with and fell in love with the classic taste of Spezi—a refreshing blend of cola and orange. We made it our mission to bring that distinctive, thirst-quenching experience home to Vancouver.</p>
                 </div>
             </div>
 
             <div class="founders-area">
                <h3>THE FOUNDERS</h3>
                <div class="founders-grid">
-                   <div class="founder-card"><img src="fabi.png" alt="Fabian" class="founder-photo"><h4>Fabian</h4><p>Co-Founder</p></div>
+                   <div class="founder-card"><img src="fabi.jpg" alt="Fabian" class="founder-photo"><h4>Fabian</h4><p>Co-Founder</p></div>
                    <div class="founder-card"><img src="joelhead.png" alt="Joel" class="founder-photo"><h4>Joel</h4><p>Co-Founder</p></div>
                    <div class="founder-card"><img src="dad.jpg" alt="Joerg" class="founder-photo"><h4>Joerg</h4><p>Co-Founder</p></div>
                    <div class="founder-card"><img src="timo.jpeg" alt="Timo" class="founder-photo"><h4>Timo</h4><p>Co-Founder</p></div>
@@ -91,26 +84,26 @@
     </section>
 
     <section class="social-highlight-section">
-    <div class="social-content">
-        <h2>FOLLOW THE ADVENTURE</h2>
-        <div class="social-icons-large">
+        <div class="social-content">
+            <h2>FOLLOW THE ADVENTURE</h2>
+            <div class="social-icons-large">
             <a href="https://www.instagram.com/alpinemix.ca/" target="_blank" class="social-icon"><img src="icon-instagram.png" alt="Instagram"></a>
             <a href="https://www.tiktok.com/@alpinemix" target="_blank" class="social-icon"><img src="icon-tiktok.png" alt="TikTok"></a>
             <a href="https://www.facebook.com/profile.php?id=61584642136603" target="_blank" class="social-icon"><img src="icon-facebook.png" alt="Facebook"></a>
             <a href="https://youtube.com/@alpinemixsoda" target="_blank" class="social-icon"><img src="icon-youtube.png" alt="YouTube"></a>
+            </div>
+            <div class="social-visual">
+                <img src="product-splash.png" alt="Splash" class="splash-img">
+            </div>
         </div>
-        <div class="social-visual">
-            <img src="product-splash.png" alt="Alpine Soda Splash" class="splash-img">
-        </div>
-    </div>
-</section>
+    </section>
 
     <section id="contact-section" class="content-section">
         <h2 class="section-heading">CONTACT</h2>
         
         <div class="contact-illustrations">
+            <img src="ski-poles.png" alt="Poles" class="poles-icon">
             <img src="tree-decor.png" alt="Trees" class="trees-icon">
-            <img src="ski-poles.png" alt="Ski Poles" class="poles-icon">
         </div>
 
         <form class="contact-form" style="max-width: 600px; margin: 0 auto; position: relative; z-index: 1;">
@@ -170,7 +163,8 @@
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
             const docHeight = document.body.scrollHeight - window.innerHeight;
-            targetAltitude = maxAltitude - (maxAltitude * Math.max(0, Math.min(1, scrollTop / docHeight)));
+            let scrollPercent = Math.max(0, Math.min(1, scrollTop / docHeight));
+            targetAltitude = maxAltitude - (maxAltitude * scrollPercent);
         });
 
         function animate() {
@@ -182,41 +176,21 @@
         }
 
         function updateDisplay(altitude) {
-    // Round to nearest 10 for the display
-    const currentReal = Math.round(altitude / 10) * 10;
-    
-    // Calculate the fine-grain difference for the sliding animation
-    const diff = (altitude / 10) - (currentReal / 10);
+            const currentReal = Math.round(altitude / 10) * 10;
+            const diff = (altitude / 10) - (currentReal / 10);
+            
+            const nextVal = currentReal + 10;
+            const prevVal = currentReal - 10;
 
-    // Get the elements
-    const nextEl = document.getElementById('alt-next');
-    const currentEl = document.getElementById('alt-current');
-    const prevEl = document.getElementById('alt-prev');
+            document.getElementById('alt-next').innerText = nextVal > 3000 ? "" : nextVal + "m";
+            document.getElementById('alt-current').innerText = currentReal + "m";
+            document.getElementById('alt-prev').innerText = prevVal < 0 ? "" : prevVal + "m";
 
-    // 1. Next Number (Top Slot)
-    const nextVal = currentReal + 10;
-    nextEl.innerText = (nextVal > 3000) ? "" : nextVal + "m";
-    
-    // 2. Current Number (Middle Slot)
-    currentEl.innerText = currentReal + "m";
-    
-    // 3. Previous Number (Bottom Slot)
-    const prevVal = currentReal - 10;
-    prevEl.innerText = (prevVal < 0) ? "" : prevVal + "m";
-
-    // Perform the "mechanical" slide animation
-    const rowHeight = 30; 
-    const offset = -(diff * rowHeight); 
-    document.getElementById('number-strip').style.transform = `translateY(${offset}px)`;
-
-    // Move the orange dot indicator on the vertical track
-    const smoothPercent = (maxAltitude - altitude) / maxAltitude;
-    const moveDistance = smoothPercent * (trackHeight - 20); 
-    document.getElementById('scroll-indicator').style.transform = `translateY(${moveDistance}px)`;
-}
+            document.getElementById('number-strip').style.transform = `translateY(${-diff * 30}px)`;
+            const moveDistance = ((maxAltitude - altitude) / maxAltitude) * (trackHeight - 20); 
+            document.getElementById('scroll-indicator').style.transform = `translateY(${moveDistance}px)`;
+        }
         animate();
     </script>
 </body>
 </html>
-
-
